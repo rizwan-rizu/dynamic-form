@@ -1,0 +1,15 @@
+$white: #ffffff;
+$black: #000000;
+$black100: #222222;
+$gray: #fafafa;
+$gray100: #f7f7f7;
+$gray200: #e8e8e8;
+
+:export {
+  white: $white;
+  black: $black;
+  black100: $black100;
+  gray: $gray;
+  gray100: $gray100;
+  gray200: $gray200;
+}
