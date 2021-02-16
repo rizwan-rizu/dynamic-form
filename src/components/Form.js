@@ -5,7 +5,7 @@ import form from '../data/data'
 import InputField from './common2/InputField'
 import CheckBox from './common2/Checkbox'
 import InputSelect from './common2/InputSelect'
-import { useForm } from 'react-hook-form';
+// import { useForm } from 'react-hook-form';
 
 
 const Form = () => {
@@ -38,15 +38,15 @@ const Form = () => {
     }
   }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   console.log(firstName, lastName, middleName, hasMiddleName, state, country)
-  // }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(firstName, lastName, middleName, hasMiddleName, state, country)
+  }
 
-  const { register, handleSubmit, errors, watch } = useForm();
+  // const { register, handleSubmit, errors, watch } = useForm();
 
-  let watchvalues = null
-  let element = null
+  // let watchvalues = null
+  // let element = null
   const formComponent = (formSection) => {
     return formSection.map((item, index) => {
 
@@ -59,7 +59,7 @@ const Form = () => {
       if (item.type === "text" || item.type === "number") {
         return (
           <Box m={1} key={index} >
-            {/* <InputField
+            <InputField
               type={item.type}
               label={item.label}
               definition={item.definition}
@@ -68,25 +68,22 @@ const Form = () => {
               variant="outlined"
               size="small"
               getFieldValue={getFieldValue}
-            /> */}
-            <input type={item.type} placeholder={item.definition} id={item.id} />
+            />
           </Box>
         )
       } else if (item.type === "checkbox") {
         return (
           <Box m={1} key={index} >
-            {/* <CheckBox
+            <CheckBox
               label={item.label}
               definition={item.definition}
               id={item.id}
               getFieldValue={getFieldValue}
-            /> */}
-            <input type={item.type} label={item.definition} id={item.id} />
+            />
           </Box>
         )
       }
       else if (item.type === "select") {
-        // settotalFields(++totalFields)
         return (
           <Box m={1} key={index} >
             <InputSelect
